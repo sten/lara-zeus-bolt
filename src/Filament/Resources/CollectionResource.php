@@ -19,9 +19,12 @@ use LaraZeus\Bolt\Filament\Resources\CollectionResource\Pages\CreateCollection;
 use LaraZeus\Bolt\Filament\Resources\CollectionResource\Pages\EditCollection;
 use LaraZeus\Bolt\Filament\Resources\CollectionResource\Pages\ListCollections;
 use LaraZeus\Bolt\Filament\Resources\CollectionResource\Widgets\EditCollectionWarning;
+use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable;
 
 class CollectionResource extends BoltResource
 {
+    use Translatable;
+
     protected static string | BackedEnum | null $navigationIcon = 'tabler-brand-databricks';
 
     protected static ?int $navigationSort = 3;

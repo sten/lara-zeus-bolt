@@ -34,6 +34,7 @@
         "lara-zeus/core": "^4.0",
         "lara-zeus/filament-plugin-tools": "^2.0",
         "lara-zeus/list-group": "^2.0",
+        "lara-zeus/spatie-translatable": "^1.0",
         "lara-zeus/tabler-icons-enum": "^1.0",
         "pxlrbt/filament-excel": "^3.1"
     },
