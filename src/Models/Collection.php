@@ -18,9 +18,9 @@ use Spatie\Translatable\HasTranslations;
 class Collection extends Model
 {
     use HasFactory;
+    use HasTranslations;
     use HasUpdates;
     use SoftDeletes;
-    use HasTranslations;
 
     protected $guarded = [];
 
@@ -51,23 +51,24 @@ class Collection extends Model
      * Returns the values as a collection. Translatable variables are always cast as an array. This function transforms
      * it to a collection.
      * Note: The newer Attribute approach does not seem to be compatible with laravel-translatable ;-(.
-     * @param $value
+     *
      * @return \Illuminate\Support\Collection
      */
     public function getValuesAttribute($value)
     {
-        if($value instanceof \Illuminate\Support\Collection){
+        if ($value instanceof \Illuminate\Support\Collection) {
             return $value;
         }
-        if(empty($value)){
+        if (empty($value)) {
             return collect();
         }
-        if(is_array($value)){
+        if (is_array($value)) {
             return collect($value);
         }
-        if(is_string($value)){
+        if (is_string($value)) {
             return collect(json_encode($value));
         }
+
         return collect($value);
     }
 
